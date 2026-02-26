@@ -200,18 +200,6 @@ Order placed successfully
 ## 7. Architecture Overview
 
 High‑level data flow:
-
-```mermaid
-flowchart LR
-    U[User (CLI)] --> C[cli.py]
-    C --> O[OrderService (bot/orders.py)]
-    O --> V[Validators (bot/validators.py)]
-    O --> CL[BinanceFuturesClient (bot/client.py)]
-    O --> L[Logging (bot/logging_config.py)]
-    CL --> B[(Binance Futures Testnet API)]
-    L --> F[logs/trading.log]
-```
-
 - `cli.py`
   - Parses command‑line args.
   - Prints the request summary and final response.
